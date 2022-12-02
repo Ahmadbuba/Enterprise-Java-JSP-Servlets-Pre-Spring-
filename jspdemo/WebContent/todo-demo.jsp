@@ -23,9 +23,18 @@
 	
 	// see if there is form data to add
 	String theItem = request.getParameter("theItem");
-	if (theItem != null) {
-		items.add(theItem);
+	
+	//
+	// UPDATED CODE BLOCK FOR booleans and if/then statement
+	//
+	boolean isItemNotEmpty = theItem != null && theItem.trim().length() > 0;
+	
+	boolean isItemNotDuplicate = theItem != null && !items.contains(theItem.trim());
+	
+	if (isItemNotEmpty && isItemNotDuplicate) {
+		items.add(theItem.trim());
 	}
+	
 %>
 
 <!-- Step 3: Display all "To Do" item from session -->
