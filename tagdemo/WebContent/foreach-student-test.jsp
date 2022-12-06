@@ -22,13 +22,15 @@
 		<th>Gold Customer</th>
 	</tr>
 	
-		<c:forEach var="tempStudent" items="${myStudents}">
+		<c:forEach var="tempStudent" items="${STUDENT_LIST}">
+		
 			<tr>
 				<td>${tempStudent.firstName} </td>
 				<td>${tempStudent.lastName } </td>
 				<td>${tempStudent.goldCustomer } </td>
 				<br/>
 			</tr>
+			
 		</c:forEach>
 	</table>
 
